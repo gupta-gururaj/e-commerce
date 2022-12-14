@@ -1,0 +1,26 @@
+<div
+  class="card"
+  style="justify-content: center; margin-top: 50px; margin-left: 50px"
+>
+  <div class="card-horizontal">
+    <div class="img-square-wrapper">
+      {{ product }}
+      <img
+        src="{{ product.image }}"
+        alt="Card image cap"
+        style="width: 500px; height: 400px"
+      />
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{ product.name }}</h4>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+      <div>
+        <p><b>Price: </b>${{ product.price }}</p>
+        <p style="color: green">In Stock</p>
+      </div>
+      <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+  </div>
+</div>

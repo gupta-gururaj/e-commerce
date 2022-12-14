@@ -1,0 +1,8 @@
+<div style="display: flex; max-width: 100%; overflow: hidden">
+  <app-product
+    *ngFor="let posts of this.dataServices.Products"
+    [product]="posts"
+    style="margin-left: 30px"
+  >
+  </app-product>
+</div>

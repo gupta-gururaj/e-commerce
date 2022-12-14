@@ -1,0 +1,35 @@
+<div
+  class="card"
+  style="width: 18rem; justify-content: center"
+  *ngIf="this.dataServices.isDataAvailable"
+  onclick="onProductClick($event)"
+>
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap" />
+  <div class="card-body" style="justify-content: center">
+    <h5 class="card-title">
+      <b>{{ product.name }}</b>
+    </h5>
+    <p class="card-text" style="height: 75px">
+      <i> {{ product.description }}</i>
+    </p>
+    <div style="display: flex; flex: 1; width: 100%">
+      <p><b>Price: </b>${{ product.price }}</p>
+      <p
+        style="right: 15px; position: absolute"
+        [ngClass]="{
+          'bg-green': product.quantity > 0,
+          'bg-red': product.quantity <= 0
+        }"
+      >
+        {{ product.quantity > 0 ? "In Stock" : "Out of stock" }}
+      </p>
+    </div>
+    <button
+      href="#"
+      class="btn btn-primary"
+      [disabled]="!(product.quantity > 0)"
+    >
+      Add to cart
+    </button>
+  </div>
+</div>
